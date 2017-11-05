@@ -24,8 +24,9 @@ public class Practice6Test {
 	/**
 	 * Basic test: insert a number then remove it and check that it's the same one.
 	 * @return true on success; false otherwise.
+	 * @throws Exception 
 	 */
-	public boolean insertRemoveTest() {
+	public boolean insertRemoveTest() throws Exception {
 		heap.add(1);
 		if (heap.remove() == 1) {
 			return true;
@@ -37,8 +38,9 @@ public class Practice6Test {
 	/**
 	 * Advanced test: insert a few random numbers and ensure that the minimum is returned.
 	 * @return true on success; false otherwise.
+	 * @throws Exception 
 	 */
-	public boolean insertMultipleTest() {
+	public boolean insertMultipleTest() throws Exception {
 		Random random = new Random();
 		int bound = 1000;
 		int minimum = random.nextInt(bound);
@@ -67,7 +69,7 @@ public class Practice6Test {
 				correct = false;
 			}
 		}
-		
+	
 		return correct;
 	}
 	
@@ -75,8 +77,9 @@ public class Practice6Test {
 	/**
 	 * Full ordering test: insert a few numbers and ensure they are globally in order.
 	 * @return true on success; false otherwise.
+	 * @throws Exception 
 	 */
-	public boolean fullOrderingTest() {
+	public boolean fullOrderingTest() throws Exception {
 		Random random = new Random();
 		boolean correct = true;
 		
@@ -106,8 +109,9 @@ public class Practice6Test {
 	 * Median timing is 10ms on modern (somewhat underpowered) machines. 15ms or greater is an outlier.
 	 * This could indicate an incorrect design for the heap.
 	 * @return true if timing is within norms; false otherwise
+	 * @throws Exception 
 	 */
-	public boolean timingTest() {
+	public boolean timingTest() throws Exception {
 		long start = System.currentTimeMillis();
 		Random random = new Random();
 		
@@ -128,8 +132,9 @@ public class Practice6Test {
 	
 	/**
 	 * Runs all tests above. Assigns point values to each test and prints the values to stdout.
+	 * @throws Exception 
 	 */
-	public void runTests() {
+	public void runTests() throws Exception {
 		int grade = 0;
 		
 		// Test 1: basic "insert and remove"
@@ -184,10 +189,11 @@ public class Practice6Test {
 		
 		System.out.println("-----------------------------------------");
 		System.out.println("Starting point for this assignment: " + grade + "%.");
+		
 	}
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Practice6Test test = new Practice6Test();
 		test.runTests();
 	}
